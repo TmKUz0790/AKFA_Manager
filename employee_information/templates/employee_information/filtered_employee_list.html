@@ -1,0 +1,55 @@
+<!-- filtered_employee_list.html -->
+
+{% extends "employee_information/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Filter Form</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form method="GET" action="{% url 'filter_employees' %}" class="mb-4">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <label for="first_name" class="form-label">First Name:</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="last_name" class="form-label">Last Name:</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="code" class="form-label">Code:</label>
+                    <input type="text" class="form-control" id="code" name="code">
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="gender" class="form-label">Gender:</label>
+                    <select class="form-control" id="gender" name="gender">
+                        <option value="">All</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-4">
+                    <label for="salary" class="form-label">Salary:</label>
+                    <input type="text" class="form-control" id="salary" name="salary">
+                </div>
+                <div class="col-12 col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-primary w-100">Apply Filter</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
